@@ -26,14 +26,44 @@ can try to select buttons using the pncEditSlot
 pncButtonMove
 
 //USE THIS and change pncEditSlot number to get different button
+```
 document.getElementById("pncEditSlot_0").getElementsByClassName("pncButtonMove")[0].click()
+```
 
 After clicking MOVE button, new HERE buttons come up that need to be clicked
 
 //USE THIS to select the position that you want to move the selected player to, change
 the number for different positions
 
+```
 document.getElementById("pncButtonHere_0").click()
+```
 
 the only problem with this is that instead of swapping the players, the person that gets
 replaced on the here slot moves to the bench
+
+if you save the buttons as variables before you click them
+e.g.
+```
+let a = document.getElementById("pncEditSlot_0").getElementsByClassName("pncButtonMove")[0]
+```
+
+then do
+```
+a.click()
+```
+, that player gets clicked even if the player was moved before
+
+so when making a swap, can store 2 players as variables and then swap them eventually
+actually wait players don't necessarily have to swap, but this is a good thing to keep in mind
+
+ALSO, players already playing aka 0-8 don't ever need to change out, only people from the bench need to change into the active roster
+
+//After doing all the moves successfully, make sure to call
+```
+document.getElementById("pncSaveRoster1").click()
+```
+to save the roster
+
+
+side note, when choosing between two players for one spot, use the one with the higher own percentage
